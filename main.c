@@ -3,16 +3,17 @@
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
-int main(int argc, char *argv[]) {
-	int i = 10;
-	char c = 'a';
+void swap(int *x, int *y) {
+	int temp;
+	temp = *x;
+	*x = *y;
+	*y=temp;
+}
+
+int main(void){
+	int a = 3;
+	int b = 5;
 	
-	int *iptr = &i;
-	char *cptr = &c;
-	int *iptr2 = iptr;
-	
-	printf("i : %p\n%p (size:%i)",iptr, &i, sizeof(iptr));
-	printf("c : %p\n%p (size:%i)",cptr, &i, sizeof(cptr));
-	printf("iptr2: %p, %i\n", iptr2, *iptr2);
-	return 0;
+	swap(&a,&b);
+	printf("a:%i, b:%i\n", a, b);
 }
